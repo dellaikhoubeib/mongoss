@@ -4,11 +4,13 @@ const contactSchema = mongoose.Schema({
     name:String,
     lastName:String,
     age:Number,
-    email:{
+     email:{
         type:String,
         required:true,
-        unique:true
+        unique:true,
+        match: [/.+@.+..+/, 'Please fill a valid email address']
     }
+    
 })
 
 
